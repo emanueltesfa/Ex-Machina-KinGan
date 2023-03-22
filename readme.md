@@ -63,6 +63,7 @@ python3 inference.py --mom_path ./test/mom.png --dad_path ./test/dad.png
 ## Credits
 
 We sincerely thanks for great development from other related projects, and we borrow code from 
+ - TODO: Add StyleDNA citation (see next section)
  - stylegan2: https://github.com/rosinality/stylegan2-pytorch  
   Copyright (c) 2019 Kim Seonghyeon  
   License (MIT) https://github.com/rosinality/stylegan2-pytorch/blob/master/LICENSE  
