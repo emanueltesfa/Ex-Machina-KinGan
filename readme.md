@@ -1,18 +1,8 @@
 # Ex-Machina - Highly Variable Kin Face Image Synthesis
 - [Presentation Slides](https://docs.google.com/presentation/d/1te6pDOuLYa86QUPClomKFSSpHMiRBk8AmDqGvF_ou7o/edit?usp=sharing)
 - [Report](https://www.overleaf.com/project/642475fcb89d84398363ba6c)
-## Timeline and Goals
 
-* By midterm (date?):
-  1. Replicate results from KinshipGEN and GANKIN
-  2. Goal of Project
-  3. Experiment with different Neural Network architectures for kin feature predictors
-* Bonus
-  1. Improve upon GAN used to generate faces
-
-## Description
-
-# The image-synthesis pipeline is composed of a couple models.
+This image synthesis pipeline is composed of a couple models.
 
 Primarly, we are using **StyleDNA**.
 Here is how you can build your own pipeline.
