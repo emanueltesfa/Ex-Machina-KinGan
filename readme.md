@@ -12,10 +12,13 @@
 
 ## Description
 
-This is a fork of StyleDNA.
+# The image-synthesis pipeline is composed of a couple models.
+
+Primarly, we are using **StyleDNA**.
+Here is how you can build your own pipeline.
 
 ## Get Started
-
+### StyleDNA
 #### Prerequisites
 
 - Linux or macOS
@@ -35,13 +38,9 @@ This is a fork of StyleDNA.
 
 - [Other pretrained model weights](https://drive.google.com/drive/folders/1ExZtCMFeLP4y5VYNg9rQWnkBCxbQ38xc?usp=sharing)
 
-
-
 #### Inference Notebook
 
 We provide a Jupyter notebook version running on [Google Colab](https://colab.research.google.com/drive/1FHf5ftbYtAfvODEqj5lp-S1cir44UniT?usp=sharing) for fast inferecing.
-
-
 
 ## Inferencing
 
@@ -53,46 +52,14 @@ Download all the pretrained model weights and put them in *./pretrained_model/*
 
 Having your trained model weight, you can use `./inference.py` to test the model on a set of images.
 For example,
-
 ```
 python3 inference.py --mom_path ./test/mom.png --dad_path ./test/dad.png
 ```
 
-
-
 ## Credits
-
-We sincerely thanks for great development from other related projects, and we borrow code from 
- - TODO: Add StyleDNA citation (see next section)
  - stylegan2: https://github.com/rosinality/stylegan2-pytorch  
-  Copyright (c) 2019 Kim Seonghyeon  
-  License (MIT) https://github.com/rosinality/stylegan2-pytorch/blob/master/LICENSE  
-
  - pSp: https://github.com/eladrich/pixel2style2pixel  
-  Copyright (c) 2020 Elad Richardson, Yuval Alaluf  
-  License (MIT) https://github.com/eladrich/pixel2style2pixel/blob/master/LICENSE  
-
  - InsightFace_Pytorch: https://github.com/TreB1eN/InsightFace_Pytorch  
-  Copyright (c) 2018 TreB1eN  
-  License (MIT) https://github.com/TreB1eN/InsightFace_Pytorch/blob/master/LICENSE  
-
  - dlib: http://dlib.net/face_landmark_detection.py.html  
-  License (BSL-1.0) https://github.com/davisking/dlib/blob/master/LICENSE.txt  
-
  - Face alignment: https://gist.github.com/lzhbrian/bde87ab23b499dd02ba4f588258f57d5
-
-
-
-## Citation
-
-If you find this code useful for your research, please cite our paper, StyleDNA: A High-Fidelity Age and Gender Aware Kinship Face Synthesizer.
-
-```
-@inproceedings{lin2021styledna,
-  title={StyleDNA: A High-Fidelity Age and Gender Aware Kinship Face Synthesizer},
-  author={Lin, Che-Hsien and Chen, Hung-Chun and Cheng, Li-Chen and Hsu, Shu-Chuan and Chen, Jun-Cheng and Wang, Chih-Yu},
-  booktitle={Proceedings of the IEEE International Conference on Automatic Face and Gesture Recognition (FG)},
-  year={2021}
-}
-```
 
