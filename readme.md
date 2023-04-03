@@ -1,4 +1,4 @@
-# Ex-Machina GAN: A High-Fidelity Kinship Face Synthesizer
+# Ex-Machina - Highly Variable Kin Face Image Synthesis
 [Presentation Slides](https://docs.google.com/presentation/d/1te6pDOuLYa86QUPClomKFSSpHMiRBk8AmDqGvF_ou7o/edit?usp=sharing)
 [Report](https://www.overleaf.com/project/642475fcb89d84398363ba6c)
 ## Timeline and Goals
