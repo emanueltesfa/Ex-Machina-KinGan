@@ -2,21 +2,13 @@
 - [Presentation Slides](https://docs.google.com/presentation/d/1te6pDOuLYa86QUPClomKFSSpHMiRBk8AmDqGvF_ou7o/edit?usp=sharing)
 - [Report](https://www.overleaf.com/project/642475fcb89d84398363ba6c)
 - [Quick Inference Notebook](https://www.kaggle.com/code/keycasey/kin-faces)
-# Ex-Machina - Highly Variable Kin Face Image Synthesis
-- [Presentation Slides](https://docs.google.com/presentation/d/1te6pDOuLYa86QUPClomKFSSpHMiRBk8AmDqGvF_ou7o/edit?usp=sharing)
-- [Report](https://www.overleaf.com/project/642475fcb89d84398363ba6c)
-- [Quick Inference Notebook](https://www.kaggle.com/code/keycasey/kin-faces)
 
 This image synthesis pipeline is composed of a couple models.
-This image synthesis pipeline is composed of a couple models.
 
-Primarly, we are using **StyleDNA**.
-Here is how you can build your own pipeline.
 Primarly, we are using **StyleDNA**.
 Here is how you can build your own pipeline.
 
 ## Get Started
-### StyleDNA
 ### StyleDNA
 #### Prerequisites
 
@@ -70,6 +62,7 @@ pretrained_model/
 - [StyleGAN2](https://drive.google.com/file/d/1EM87UquaoQmk17Q8d5kYIAHqu0dkYqdT/view)
 
   StyleGAN2 model pretrained on FFHQ taken from [rosinality](https://github.com/rosinality/stylegan2-pytorch) with 1024x1024 output resolution.
+  StyleGAN2 model pretrained on FFHQ taken from [rosinality](https://github.com/rosinality/stylegan2-pytorch) with 1024x1024 output resolution.
 
 - [Other pretrained model weights](https://drive.google.com/drive/folders/1ExZtCMFeLP4y5VYNg9rQWnkBCxbQ38xc?usp=sharing)
 
@@ -85,6 +78,7 @@ Download all the pretrained model weights and put them in *./pretrained_model/*
 
 #### Inferencing
 
+Having your trained model weight, you can use `./inference.py` to test the model on a set of images.
 Having your trained model weight, you can use `./inference.py` to test the model on a set of images.
 For example,
 ```
@@ -113,6 +107,11 @@ scripts\train_blender.py
 
 
 ## Credits
+ - stylegan2: https://github.com/rosinality/stylegan2-pytorch  
+ - pSp: https://github.com/eladrich/pixel2style2pixel  
+ - InsightFace_Pytorch: https://github.com/TreB1eN/InsightFace_Pytorch  
+ - dlib: http://dlib.net/face_landmark_detection.py.html  
+ - Face alignment: https://gist.github.com/lzhbrian/bde87ab23b499dd02ba4f588258f57d5
  - stylegan2: https://github.com/rosinality/stylegan2-pytorch  
  - pSp: https://github.com/eladrich/pixel2style2pixel  
  - InsightFace_Pytorch: https://github.com/TreB1eN/InsightFace_Pytorch  
