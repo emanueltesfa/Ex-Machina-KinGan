@@ -2,13 +2,21 @@
 - [Presentation Slides](https://docs.google.com/presentation/d/1te6pDOuLYa86QUPClomKFSSpHMiRBk8AmDqGvF_ou7o/edit?usp=sharing)
 - [Report](https://www.overleaf.com/project/642475fcb89d84398363ba6c)
 - [Quick Inference Notebook](https://www.kaggle.com/code/keycasey/kin-faces)
+# Ex-Machina - Highly Variable Kin Face Image Synthesis
+- [Presentation Slides](https://docs.google.com/presentation/d/1te6pDOuLYa86QUPClomKFSSpHMiRBk8AmDqGvF_ou7o/edit?usp=sharing)
+- [Report](https://www.overleaf.com/project/642475fcb89d84398363ba6c)
+- [Quick Inference Notebook](https://www.kaggle.com/code/keycasey/kin-faces)
 
+This image synthesis pipeline is composed of a couple models.
 This image synthesis pipeline is composed of a couple models.
 
 Primarly, we are using **StyleDNA**.
 Here is how you can build your own pipeline.
+Primarly, we are using **StyleDNA**.
+Here is how you can build your own pipeline.
 
 ## Get Started
+### StyleDNA
 ### StyleDNA
 #### Prerequisites
 
