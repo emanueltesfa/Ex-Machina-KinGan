@@ -1,0 +1,5 @@
+recognizing-faces-in-the-wild/*
+FFHQ-Aging-Dataset/data/*
+*__pycache__/*
+*.pyc
+pretrained_model/*
