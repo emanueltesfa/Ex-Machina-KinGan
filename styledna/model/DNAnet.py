@@ -69,7 +69,7 @@ def kl_divergence(mu1, log_sigma1, mu2, log_sigma2):
 
 
 class VAE(nn.Module):
-    def __init__(self, nz, beta=1.0, device='cpu'):
+    def __init__(self, nz, beta=0.25, device='cpu'):
         super().__init__()
         self.beta = beta # factor trading off between two loss components
       
@@ -83,11 +83,11 @@ class VAE(nn.Module):
             nn.Linear(512, 512),
             nn.BatchNorm1d(512),
             nn.PReLU(),
-            nn.Linear(512, 512*2),
+            nn.Linear(512, nz*2),
         ).to(device)
 
         self.decoder = nn.Sequential(
-            nn.Linear(512, 512),
+            nn.Linear(nz, 512),
             nn.BatchNorm1d(512),
             nn.PReLU(),
             nn.Linear(512, 512),
@@ -100,8 +100,8 @@ class VAE(nn.Module):
     def forward(self, x):
         code = self.encoder(x)
         n = code.shape[0]
-        mu,sig = code.split(nz,dim=1)
-        sample = torch.distributions.MultivariateNormal(torch.zeros(nz),torch.eye(nz)).sample_n(n).to(self.device)
+        mu,sig = code.split(self.nz,dim=1)
+        sample = torch.distributions.MultivariateNormal(torch.zeros(self.nz),torch.eye(self.nz)).sample((n,)).to(self.device)
         z = mu + (sig*sample)
         
         q = code
@@ -115,11 +115,11 @@ class VAE(nn.Module):
 
         code = outputs["q"]
         rec = outputs["rec"].squeeze(1)
-        mu, sig = code.split(nz,dim=1)
+        mu, sig = code.split(self.nz,dim=1)
         b = mu.shape[0]
         rec_loss = mse(x,rec)
-        prior_mu = torch.zeros(b,nz).to(self.device)
-        prior_sig = torch.ones(b,nz).to(self.device)
+        prior_mu = torch.zeros(b,self.nz).to(self.device)
+        prior_sig = torch.ones(b,self.nz).to(self.device)
         kl_loss = kl_divergence(mu.to(self.device),sig.to(self.device),prior_mu,prior_sig)
 
         # return weighted objective
@@ -129,7 +129,7 @@ class VAE(nn.Module):
     def reconstruct(self, x):
         """Use mean of posterior estimate for visualization reconstruction."""
         code = self.encoder(x.to(self.device))
-        mu,sig = code.split(nz,dim=1) if len(code.shape) > 1 else code.split(nz)
+        mu,sig = code.split(self.nz,dim=1) if len(code.shape) > 1 else code.split(self.nz)
         image_flat = self.decoder(mu.to(self.device))
         image = image_flat.reshape(1,28,28)
         return image

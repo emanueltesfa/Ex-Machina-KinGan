@@ -54,6 +54,8 @@ pretrained_model/
   model_ir_se50.pth
   shape_predictor_68_face_landmarks.dat
   stylegan2-ffhq-config-f.pt
+saved_models/
+  vae_5000.pth
 ```
 - [Face Predictor](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2)
 
@@ -78,11 +80,14 @@ Download all the pretrained model weights and put them in *./pretrained_model/*
 
 #### Inferencing
 
-Having your trained model weight, you can use `./inference.py` to test the model on a set of images.
-Having your trained model weight, you can use `./inference.py` to test the model on a set of images.
-For example,
+To perform inference with original styleDNA
 ```
-python3 inference.py --mom_path ./test/mom.png --dad_path ./test/dad.png
+python3 og_inference.py
+```
+
+To perform inference with styleDNA + Ex-Machina Fusion
+```
+python3 vae_inference.py
 ```
 
 ## Training
@@ -97,12 +102,24 @@ scripts\train_CAE.py
 
 ### Train Blender/DNA-Net+
 
-This is still in progress. Code lives in 
+Script to replicate DNA-Net+ training 
 ```
-scripts\train_blender.py
+styledna\train_blender.py
+```
+### Train Blender/Vae
+
+Script to train variational autoencoder
+```
+styledna\train_vaeblender.py
 ```
 ## Misc/eval scripts
 
+### Generate multiple child comparisons
+Example:
+![alt text](styledna\result\vae_child1\results_combined.png)
+```
+styledna\age_range_inference.ipynb
+```
 
 
 

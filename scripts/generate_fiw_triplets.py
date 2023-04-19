@@ -7,6 +7,7 @@ import glob
 from PIL import Image
 import itertools
 import pickle
+import pandas as pd
 def main(args):
     print(args)
 
@@ -67,7 +68,7 @@ def main(args):
             #     indiv_images.append(np.array(img))
             all_images.append(paths)
         true_triplets += list(itertools.product(*all_images))
-
+    pd.DataFrame(true_triplets).to_csv("triplets.csv")
     
 
     

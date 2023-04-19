@@ -3,3 +3,6 @@ FFHQ-Aging-Dataset/data/*
 *__pycache__/*
 *.pyc
 pretrained_model/*
+saved_models/*.pth
+triplets.csv
+styledna/result

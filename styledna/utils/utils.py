@@ -39,7 +39,12 @@ transform = transforms.Compose(
 )   
 
 # download model from: http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2
-predictor = dlib.shape_predictor('./pretrained_model/shape_predictor_68_face_landmarks.dat')
+landmarks_file = './pretrained_model/shape_predictor_68_face_landmarks.dat'
+predictor = None
+if os.path.exists(landmarks_file):
+    predictor = dlib.shape_predictor(landmarks_file)
+else:
+    predictor = dlib.shape_predictor("."+landmarks_file)
 
 def totensor(img):
     img = transform(img)    
