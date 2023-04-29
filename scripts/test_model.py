@@ -100,7 +100,7 @@ def main(args):
                 # save_img(triplet_tensors[1],f"tests\\mother_{i}.png")
                 # save_img(triplet_tensors[2],f"tests\\child_{i}.png")
                 # save_img(out.squeeze(0),f"tests\\rec_{i}.png")
-                p1_score = cos(p1_hat,c_hat).item()
+                p1_score = cos(p1_hat,c_hat).item() #feature vectors (after arc face)
                 p2_score = cos(p2_hat,c_hat).item()
 
                 # import pdb; pdb.set_trace()

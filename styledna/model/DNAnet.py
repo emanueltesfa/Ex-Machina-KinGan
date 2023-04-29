@@ -2,7 +2,7 @@ import torch
 from torch import nn
 from torch.nn import Linear, Conv2d, BatchNorm2d, PReLU, Sequential, Module
 import torch.nn.init as init
-
+import numpy as np
 
 def weights_init(m):
     if isinstance(m, nn.Conv2d) or isinstance(m, nn.Linear):
@@ -48,10 +48,16 @@ class DNAnet(nn.Module):
                 weights_init(m)
 
     def forward(self, m, f, alpha=None):
+        device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+        print(device)
         m_gene = self.encoder(m)
         f_gene = self.encoder(f)
+        # alpha is 1 dimensional guassian/normal 
+        alpha = torch.randn(1, dtype=torch.float32).to(device)
 
         if alpha is not None:
+            print(alpha.is_cuda, m_gene.is_cuda, f_gene.is_cuda )
+            print(m_gene.dtype,m_gene.shape, f_gene.dtype, f_gene.shape)
             s_gene = alpha * m_gene + (1 - alpha) * f_gene
         else:
             s_gene = torch.max(
